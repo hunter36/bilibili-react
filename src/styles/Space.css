@@ -1,0 +1,87 @@
+.space{
+	background: #f3f3f3;
+}
+.banner{
+    width: 100%;
+    height: auto;
+    margin-top: 1.88rem;
+    position: relative;
+}
+.banner img{
+	width: 100%;
+}
+.sign{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -3.5rem;
+    width: 7rem;
+    height: 1rem;
+}
+.sign_button{
+    width: 2.572rem;
+    height: 100%;
+    background-color: #fff;
+    border-radius: .17067rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register{
+	float: left;
+}
+.login{
+	float: right;
+	background: #fb7299;
+}
+.sign .register a{
+	display: block;
+    width: 100%;
+    line-height: 1.23733rem;
+    font-size: 14px;
+    color: #fb7299;
+    text-align: center;
+}
+.sign .login a{
+	display: block;
+    width: 100%;
+    line-height: 1.23733rem;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+.space_tab{
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+    border-bottom: .02133rem solid #979797;
+    display: flex;
+    align-items: center;
+}
+.space_tab a{
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+    line-height: 1.4rem;
+    color: #666;
+}
+.space_tab a p{
+	position: relative;
+}
+.space_tab a p span{
+	width: 100%;
+	display: none;
+	position: absolute;
+	bottom: .08533rem;
+    height: .08533rem;
+    background-color: #fb7299;
+    border-radius: .04267rem;
+}
+.cur p{
+	color: #fb7299;
+}
+.cur p span{
+	display: block !important;
+}

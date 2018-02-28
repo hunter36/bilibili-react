@@ -1,0 +1,25 @@
+.login_head{
+    height: 38px;
+    line-height: 48px;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 14px 15px 12px;
+}
+.head_logo{
+    display: block;
+    width: 63px;
+    height: 28.8px;
+    float: left;
+    margin-top: 3px;
+    margin-right: 12px;
+    background: url(https://static.hdslb.com/account/img/logo-mobile.png);
+    background-size: 63px 28.8px;
+}
+.logo_text{
+    height: 42px;
+    font-size: 16px;
+    border-left: 2px solid #de698c;
+    color: #de698c;
+    font-weight: bold;
+    padding: 17px 0 0 15px;
+}

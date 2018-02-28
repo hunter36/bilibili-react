@@ -1,0 +1,49 @@
+.form{
+	padding: 15px;
+	font-size: 16px;
+}
+.form p{
+    font-size: 0.9em;
+    width: 100%;
+    display: block;
+    padding: 35px 10px 15px 0;
+    text-align: center;
+}
+.form p b{
+	font-weight: normal;
+	color: #00a1d6;
+}
+.input_box{
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: #fff;
+    width: 100%;
+    border: 1px solid #ddd;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.input_box input{
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 10px;
+    border: 0;
+}
+.tip{
+    float: left;
+    padding: 1px 0 8px 2px;
+    width: 100%;
+    color: #de698c;
+    display: none;
+}
+.forget_pwd{
+	padding: 5px 10px 35px 0 !important;
+	font-size: 16px !important;
+	text-align: right !important;
+    color: #00a1d6;
+}

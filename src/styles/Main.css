@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('iconfont.woff') format('woff'),
+  url('iconfont.ttf') format('truetype'),
+  url('iconfont.svg#iconfont') format('svg');
+}
+.slider_box{
+    width: 100%;
+    height: 4rem !important;
+}
+.slider_box img{
+	width: 100% !important;
+	height: 4rem !important;
+}
+.commend{
+    width: 100%;
+    padding-top: .08533rem;
+    height: auto;
+}
+.commend_head{
+	margin-left: .512rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: auto;
+	overflow: hidden;
+	font-size: .521rem;
+}
+.commend_head .title{
+	display: flex;
+	align-items: center;
+}
+.commend_head p{
+    margin-left: .10667rem;
+    width: 3.41333rem;
+    line-height: 1.56133rem;
+    text-align: left;
+    color: #212121;
+}
+.commend_head .rank{
+	display: flex;
+	align-items: center;
+	color: #ffa726;
+	margin-right: .512rem;
+}
+.rank .iconfont{
+    width: 1.36533rem;
+    height: .81067rem;
+    line-height: .81067rem;
+    text-align: center;
+}
+.commend .contain{
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: .256rem;
+    padding-right: .256rem;
+}
+.commend .contain ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    overflow: hidden;
+}
+.contain ul li{
+    display: block;
+    width: 49%;
+    padding-bottom: .68267rem;
+    display: flex;
+    flex-direction: column;
+}
+.contain ul li div{
+    width: 96%;
+    height: 4rem;
+    overflow: hidden;
+    border-radius: .256rem;
+    -webkit-border-radius: .256rem;
+    background-color: #e7e7e7;
+    z-index: 1;
+    margin:0 auto;
+}
+.contain ul li span{
+	margin: auto;
+	margin-top: .21333rem;
+	font-size: 0.46rem;
+}
+.contain ul li div img{
+	width: 100%;
+}
+.commend .more{
+	color: #999;
+	display: flex;
+	align-items: center;
+	margin-right: .512rem;
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}

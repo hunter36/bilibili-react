@@ -1,0 +1,30 @@
+.history{
+	padding-top: 2.02667rem;
+}
+.no_data{
+	width: 74%;
+    margin: 0 auto;
+}
+.no_data img{
+	width: 100%;
+}
+.no_data p{
+	font-size: .5267rem;
+    color: #999;
+    line-height: .85333rem;
+    text-align: center;
+}
+.no_data p span{
+    color: #fb7299;
+    margin: 0 0.2rem;
+}
+.copy{
+    padding: 1.024rem 0 1.70667rem;
+    background: #f3f3f3;
+}
+.copy p{
+    font-size: .412rem;
+    color: #999;
+    line-height: 1.024rem;
+    text-align: center;
+}
