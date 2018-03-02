@@ -13,6 +13,8 @@ import Login from './components/pages/Login';
 
 class App extends Component {
   render() {
+    var myList = this.props.store.getState().list[0];
+    console.log(myList);
     return (
       <Router>
         <div className="App">
