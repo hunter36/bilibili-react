@@ -15,9 +15,9 @@ class Anime extends Component {
 					<ul>
 						<li><NavLink exact to="/main/anime/commendAnime" activeClassName="active">推荐</NavLink></li>
 						<li><NavLink to="/main/anime/subAnime" activeClassName="active">MAD-AMV</NavLink></li>
-						<li><NavLink to="/main/anime/h" activeClassName="active">MAD-AMV</NavLink></li>
-						<li><NavLink to="/main/anime/x" activeClassName="active">MAD-AMV</NavLink></li>
-						<li><NavLink to="/main/anime/y" activeClassName="active">MAD-AMV</NavLink></li>
+						<li><NavLink to="/main/anime/h" activeClassName="active">MAD·3D</NavLink></li>
+						<li><NavLink to="/main/anime/x" activeClassName="active">短片·手书·配音</NavLink></li>
+						<li><NavLink to="/main/anime/y" activeClassName="active">综合</NavLink></li>
 					</ul>
 				</div>
 				<Route path="/main/anime/commendAnime" component={CommendAnime}/>

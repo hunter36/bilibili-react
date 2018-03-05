@@ -1,7 +1,24 @@
 import React , { Component } from 'react';
 import { Icon} from 'antd-mobile';
+import axios from 'axios';
 
 class CommendAnime extends Component {
+	state = {
+		animeList:[]
+	}
+	componentDidMount(){
+		this.getData();
+	}
+	getData(){
+      axios.get('/utils/anime.json')
+      .then((res)=>{
+        // console.log(res.data.CommendAnime.data);
+        // console.log(res.data);
+        this.setState({
+          animeList : res.data.CommendAnime.data
+        });
+      })
+    }
 	render(){
 		return (
 			<div className="commendAnime">
@@ -17,25 +34,20 @@ class CommendAnime extends Component {
 					</div>
 					<div className="contain">
 						<ul>
-							<li>
-								<div>
-									<img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-								</div>
-								<span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-							</li>
-							<li>
-								<div>
-									<img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-								</div>
-								<span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-							</li>
-							<li>
-								<div>
-									<img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-								</div>
-								<span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-							</li>
-							<li></li>
+						{
+							this.state.animeList.map((item,index)=>{
+								if(index < 4){
+									return (
+										<li key={item.aid}>
+											<div>
+												<img src={"https:" + (item.pic).substring(5) + "@320w_200h.webp"} alt={item.title}/>
+											</div>
+											<span>{item.title}</span>
+										</li>
+									)
+								}
+							})
+						}	
 						</ul>
 					</div>
 				</div>

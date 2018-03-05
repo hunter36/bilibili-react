@@ -1,12 +1,29 @@
 import React,{Component} from 'react';
 import { SearchBar } from 'antd-mobile';
 import '../../styles/Search.css';
+import axios from 'axios';
+
 class Search extends Component {
 	constructor(props){
 		super(props);
 
 		this.cancel = this.cancel.bind(this);
 	}
+	state = {
+		searchList:[]
+	}
+	componentDidMount(){
+		this.getData();
+	}
+	getData(){
+      axios.get('/utils/search.json')
+      .then((res)=>{
+        // console.log(res.data.list);
+        this.setState({
+          searchList : res.data.list
+        });
+      })
+    }
 	cancel(){
 		this.props.history.push("/");
 	}
@@ -26,11 +43,13 @@ class Search extends Component {
 			    <div className="tags">
 			    	<p className="tags_title">大家都在搜</p>
 			    	<div className="tags_contain">
-			    		<div className="my_tag">紫罗兰永恒花园</div>
-			    		<div className="my_tag">紫罗兰永恒花园</div>
-			    		<div className="my_tag">紫罗兰永恒花园</div>
-			    		<div className="my_tag">紫罗兰永恒花园</div>
-			    		<div className="my_tag">紫罗兰永恒花园</div>
+			    	{
+						this.state.searchList.map((item,index)=>{
+							return (
+								<div className="my_tag" key={item.keyword}>{item.keyword}</div>
+							)
+						})
+					}
 			    	</div>
 			    </div>
 		    	<div className="search_history">

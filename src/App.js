@@ -12,9 +12,12 @@ import Register from './components/pages/Register';
 import Login from './components/pages/Login';
 
 class App extends Component {
+  componentDidMount(){
+    window.onresize = function(){
+      // window.location.reload();
+    }
+  }
   render() {
-    var myList = this.props.store.getState().list[0];
-    console.log(myList);
     return (
       <Router>
         <div className="App">

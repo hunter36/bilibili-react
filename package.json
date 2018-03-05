@@ -2,6 +2,7 @@
   "name": "bilibili-react",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "antd-mobile": "^2.1.6",
     "axios": "^0.18.0",

@@ -1,30 +1,42 @@
 import React , { Component } from 'react';
 import {  Icon ,Carousel} from 'antd-mobile';
 import '../styles/Main.css';
-
+import axios from 'axios';
 export default class Main extends Component {
     state = {
-      data: ['1', '2', '3'],
+      data: [],
       imgHeight: 176,
       slideIndex: 0,
+      hotList:[],
+      comicList:[]
     }
     componentDidMount() {
+      this.getData();
       // simulate img loading
       setTimeout(() => {
           this.setState({
-              data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+              data: ['1bb602c2d9c1877297645a09cb55715a6e615a14.png', '6eee28dbc22946880a97ea6c0e01aba3d8e70de7.jpg', 'e2ae7e0df32b8f7b05915d18ad4d5af50f7b2da6.jpg'],
           });
       }, 100);
+    }
+    getData(){
+      axios.get('/utils/main.json')
+      .then((res)=>{
+        // console.log(res.data.hotlist.data);
+        // console.log(res.data.comiclist.data.archives);
+        this.setState({
+          hotList : res.data.hotlist.data,
+          comicList : res.data.comiclist.data.archives
+        });
+      })
     }
     render(){
         return (
           <div className="main">
               <Carousel
-                  autoplay={false}
+                  autoplay={true}
                   infinite
                   selectedIndex={1}
-                  beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-                  afterChange={index => console.log('slide to', index)}
                   className="slider_box"
               >
               {this.state.data.map(val => (
@@ -34,7 +46,7 @@ export default class Main extends Component {
                       style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
                   >
                       <img
-                          src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+                          src={`https://i0.hdslb.com/bfs/archive/${val}@480w_300h.webp`}
                           alt=""
                           style={{ width: '100%', verticalAlign: 'top' }}
                           onLoad={() => {
@@ -59,25 +71,20 @@ export default class Main extends Component {
                   </div>
                   <div className="contain">
                       <ul>
-                          <li>
-                              <div>
-                                  <img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-                              </div>
-                              <span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-                          </li>
-                          <li>
-                              <div>
-                                  <img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-                              </div>
-                              <span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-                          </li>
-                          <li>
-                              <div>
-                                  <img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-                              </div>
-                              <span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-                          </li>
-                          <li></li>
+                      {
+                          this.state.hotList.map((item,index)=>{
+                            if(index < 4){
+                              return (
+                                <li key={item.aid}>
+                                    <div>
+                                        <img src={"https:" + (item.pic + "@320w_200h.webp").substring(5)} alt={item.title}/>
+                                    </div>
+                                    <span>{item.title}</span>
+                                </li>
+                              )
+                            }
+                          })
+                      }
                       </ul>
                   </div>
               </div>
@@ -86,7 +93,7 @@ export default class Main extends Component {
                   <div className="commend_head">
                       <div className="title">
                           <i className="iconfont">&#xe6d4;</i>
-                          <p>热门推荐</p>
+                          <p>动画</p>
                       </div>
                       <div className="more">
                           查看更多
@@ -95,25 +102,20 @@ export default class Main extends Component {
                   </div>
                   <div className="contain">
                       <ul>
-                          <li>
-                              <div>
-                                  <img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-                              </div>
-                              <span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-                          </li>
-                          <li>
-                              <div>
-                                  <img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-                              </div>
-                              <span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-                          </li>
-                          <li>
-                              <div>
-                                  <img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-                              </div>
-                              <span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-                          </li>
-                          <li></li>
+                        {
+                          this.state.comicList.map((item,index)=>{
+                            if(index < 4){
+                              return (
+                                <li key={item.aid}>
+                                    <div>
+                                        <img src={"https:" + (item.pic + "@320w_200h.webp").substring(5)} alt={item.title}/>
+                                    </div>
+                                    <span>{item.title}</span>
+                                </li>
+                              )
+                            }
+                          })
+                        } 
                       </ul>
                   </div>
               </div>

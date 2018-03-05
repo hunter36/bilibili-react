@@ -1,6 +1,23 @@
 import React , { Component } from 'react';
+import axios from 'axios';
 
 class SubAnime extends Component {
+	state = {
+		subAnimeList:[]
+	}
+	componentDidMount(){
+		this.getData();
+	}
+	getData(){
+      axios.get('/utils/anime.json')
+      .then((res)=>{
+        // console.log(res.data.subAnime.data);
+        // console.log(res.data);
+        this.setState({
+          subAnimeList : res.data.subAnime.data
+        });
+      })
+    }
 	render(){
 		return (
 			<div className="subAnime">
@@ -12,30 +29,20 @@ class SubAnime extends Component {
 					</div>
 					<div className="contain">
 						<ul>
-							<li>
-								<div>
-									<img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-								</div>
-								<span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-							</li>
-							<li>
-								<div>
-									<img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-								</div>
-								<span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-							</li>
-							<li>
-								<div>
-									<img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-								</div>
-								<span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-							</li>
-							<li>
-								<div>
-									<img src="https://i0.hdslb.com/bfs/archive/bf2bf977722eb01bc2c58bbc6ba4e891b97bdad1.jpg@320w_200h.webp" alt="img"/>
-								</div>
-								<span>【莓良心】不过是外遇第三年 宽容一点吧</span>
-							</li>
+						{
+							this.state.subAnimeList.map((item,index)=>{
+								if(index < 4){
+									return (
+										<li key={item.aid}>
+											<div>
+												<img src={"https:" + (item.pic).substring(5) + "@320w_200h.webp"} alt={item.title}/>
+											</div>
+											<span>{item.title}</span>
+										</li>
+									)
+								}
+							})
+						}
 						</ul>
 					</div>
 				</div>
